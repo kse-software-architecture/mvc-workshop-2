@@ -1,64 +1,56 @@
-# Workshop #1: Getting SOLID
+# Workshop #2: MVC
 
 ---
 
 ## Structure
 
-1. In this workshop, you have a simple project to complete. You can start with the prototype of the app that one of your coworkers has created. You are free to use it, rewrite it, or take parts from it.
-2. Try to improve the provided solution, keeping in mind material from lectures, signs of good and bad code, etc.
-3. Before submission, rewrite this README to directly describe what parts of your solution you like and what parts you don't like, and why.
-4. Be prepared for _an important update_ that will arrive 30 minutes before the class ends, introducing some changes in business logic. You can try to prepare for that change.
-5. It's acceptable for this workshop to be completed by students working together on one computer.
+1. In this workshop, you have to implement a project using the MVC pattern.
+
+2. Remember to use all your previous knowledge about good and bad software, dependency inversion, and so on. This material adds to them, not replaces them.
+
+3. It's acceptable for this workshop to be completed by students working together on one computer.
 
 ---
 
 ## Task
 
-You have been hired to develop a command-line to-do application for a client who wants to manage tasks efficiently. The application should be simple to use. Initially, the client requires the application to support basic commands to add, remove, list, and complete tasks, as well as some more complex tasks, such as tasks with deadlines.
+You have been hired to develop a command-line Connect Four game for a client who wants to offer a simple and engaging experience for users. The application should be easy to use and must implement the Model-View-Controller (MVC) pattern.
 
-Tasks should persist between sessions. The team is still considering options for the service to use, so file storage is chosen for the MVP (Minimum Viable Product).
+You can look at [MVC Sample](https://github.com/artem-korotenko/mvc-tic-tac-toe) here or [play a game here](https://www.cbc.ca/kids/games/play/connect-4)
+
+### Requirements
+
+- Implement the Connect Four game using the MVC architectural pattern.
+- The game should be playable via the command line.
+- User should be asked about playing PvP vs PvE at the session start (in PvE mode computer should just randomly choose a move)
+- Players take turns to drop their discs into one of seven columns.
+- Model part should be covered with unit tests in a separate project.
+- The game should check for a winner after each move (four of the player's discs in a row horizontally, vertically, or diagonally).
+- Handle invalid inputs gracefully (e.g., full columns, out-of-range inputs).
+- The game should announce the winner or a draw when appropriate.
 
 ### Sample Usage
 
+You are free to select how you want to print a field, for example:
 
-1. Add a task: `add <task description>`
-Example:`add <Buy milk>`
-
-2. List tasks: `list all`
-Example output:
 ```
-1.[x] Order a book
-2.[]  Buy milk
+1 2 3 4 5 6 7
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | X | | |
+| | | O X | |
+| | X X O | |
 ```
-
-3. Remove a task: `remove <task number>`
-Example:`remove 1`
-
-4. Complete a task `complete <task number>`
-
-5. Tasks with deadlines:
-`add deadline <task description> <deadline>`
-
-Listing should include that information:
-```
-list all
-1.[x] Order a book
-2.[]  Buy milk
-3.[]  Make Assignment #1 on OOD (until 21.09.2024)
-```
-
-And in case of missed deadline:
-```
-list all
-1.[x] Order a book
-2.[]  Buy milk
-3.[overdue]  Make Assignment #1 on OOD (until 21.09.2024)
-```
-
 
 ### Grading Policy
-You can get up to 4 points for this task.
+1 point - overall MVC implementation
 
-**Note:** Remember to focus on applying SOLID principles, especially the Single Responsibility Principle (SRP), Open/Closed Principle (OCP), and Dependency Inversion Principle (DIP). Aim for high cohesion and low coupling in your design to make your code maintainable and extensible.
+1 point - PvP vs PvE
+
+1 point - Correct model implementation with unit tests (at least 5)
+
+1 point - fully working game loop and logic
+
 
 Good luck with your implementation!
